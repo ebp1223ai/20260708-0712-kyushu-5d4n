@@ -24,7 +24,7 @@ export default function Home() {
             <p className="mt-1 text-sm text-slate-500">
               依日期瀏覽景點，點擊卡片可開啟 Google Maps。
             </p>
-            <DailyPlan locations={locations} days={days} />
+            <DailyPlan locations={locations} routes={routes} days={days} />
           </section>
         </div>
         <section className="mt-6 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70">

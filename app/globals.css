@@ -50,12 +50,16 @@ body {
   main,
   section,
   article,
+  .itinerary-stop,
+  .route-connector,
   .glass-card,
   .leaflet-container,
   #timeline,
   #timeline article,
   .grid > article,
   .space-y-3 > a,
+  .route-connector,
+  .itinerary-stop,
   .space-y-5 > section {
     break-inside: avoid;
     page-break-inside: avoid;
@@ -99,5 +103,10 @@ body {
   .bg-gradient-to-b,
   [class*='bg-gradient'] {
     background: #fff !important;
+  }
+
+  .route-connector {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
   }
 }

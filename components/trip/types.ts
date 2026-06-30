@@ -18,6 +18,7 @@ export type RouteSegment = {
   duration: string;
   durationMin?: number;
   note: string;
+  googleMapsUrl: string;
 };
 
 export type DayInfo = {
