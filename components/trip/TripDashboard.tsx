@@ -1,4 +1,5 @@
 import type { DayInfo, Location, RouteSegment } from './types';
+import { formatDuration, routeMinutesByDay } from '@/lib/routeStats';
 
 type Props = {
   locations: Location[];
@@ -7,6 +8,8 @@ type Props = {
 };
 
 export function TripDashboard({ locations, routes, days }: Props) {
+  const dailyRouteMinutes = routeMinutesByDay(locations, routes);
+
   return (
     <section className="mt-6 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70">
       <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
@@ -23,6 +26,7 @@ export function TripDashboard({ locations, routes, days }: Props) {
         {days.map((day) => {
           const count = locations.filter((location) => location.day === day.day).length;
           const color = locations.find((location) => location.day === day.day)?.color ?? '#10233f';
+          const routeTime = formatDuration(dailyRouteMinutes[day.day] ?? 0);
 
           return (
             <article key={day.day} className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
@@ -34,7 +38,7 @@ export function TripDashboard({ locations, routes, days }: Props) {
               <p className="mt-2 text-sm leading-6 text-slate-500">{day.summary}</p>
               <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold">
                 <span className="rounded-full bg-white px-3 py-1 text-slate-600">{count} 個點</span>
-                <span className="rounded-full bg-white px-3 py-1 text-blue-700">{day.traffic}</span>
+                <span className="rounded-full bg-white px-3 py-1 text-blue-700">{routeTime}</span>
               </div>
             </article>
           );

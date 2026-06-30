@@ -16,6 +16,7 @@ export type RouteSegment = {
   mode: string;
   modeLabel: string;
   duration: string;
+  durationMin?: number;
   note: string;
 };
 

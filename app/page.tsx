@@ -13,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-trip-sky via-white to-slate-50">
       <Hero />
       <section className="mx-auto max-w-7xl px-4 pb-20">
-        <SummaryCards locations={locations} />
+        <SummaryCards locations={locations} routes={routes} />
         <TripDashboard locations={locations} routes={routes} days={days} />
         <div className="mt-6 grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
           <section className="rounded-3xl bg-white p-3 shadow-xl shadow-slate-200/70">

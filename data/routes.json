@@ -2,181 +2,201 @@
   {
     "from": 1,
     "to": 2,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.0793174,121.2345977&destination=33.4802532,131.7359598"
+    "mode": "flight",
+    "modeLabel": "飛機",
+    "duration": "2 小時 20 分鐘",
+    "note": "Tigerair Taiwan",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.0793174,121.2345977&destination=33.4802532,131.7359598",
+    "durationMin": 140
   },
   {
     "from": 2,
     "to": 3,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.4802532,131.7359598&destination=33.2765191,131.4998512"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "45 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.4802532,131.7359598&destination=33.2765191,131.4998512",
+    "durationMin": 45
   },
   {
     "from": 3,
     "to": 4,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.2765191,131.4998512&destination=33.354,131.41152778"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "55 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.2765191,131.4998512&destination=33.354,131.41152778",
+    "durationMin": 55
   },
   {
     "from": 4,
     "to": 5,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.354,131.41152778&destination=33.31683,131.4687332"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "55 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.354,131.41152778&destination=33.31683,131.4687332",
+    "durationMin": 55
   },
   {
     "from": 5,
     "to": 6,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.31683,131.4687332&destination=33.2675137,131.365641"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "35 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.31683,131.4687332&destination=33.2675137,131.365641",
+    "durationMin": 35
   },
   {
     "from": 6,
     "to": 7,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.2675137,131.365641&destination=33.2667196,131.3690386"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "5 分鐘",
+    "note": "Google Maps 規劃（園區內）",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.2675137,131.365641&destination=33.2667196,131.3690386",
+    "durationMin": 5
   },
   {
     "from": 7,
     "to": 8,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.2667196,131.3690386&destination=32.5964996,130.7069304"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "2 小時 10 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.2667196,131.3690386&destination=32.5964996,130.7069304",
+    "durationMin": 130
   },
   {
     "from": 8,
     "to": 9,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.5964996,130.7069304&destination=32.8070132,130.7102851"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "35 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.5964996,130.7069304&destination=32.8070132,130.7102851",
+    "durationMin": 35
   },
   {
     "from": 9,
     "to": 10,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.8070132,130.7102851&destination=32.827469,130.7219932"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "12 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.8070132,130.7102851&destination=32.827469,130.7219932",
+    "durationMin": 12
   },
   {
     "from": 10,
     "to": 11,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.827469,130.7219932&destination=32.8052691,130.7054642"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "10 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.827469,130.7219932&destination=32.8052691,130.7054642",
+    "durationMin": 10
   },
   {
     "from": 11,
     "to": 12,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.8052691,130.7054642&destination=32.8033338,130.7037621"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "5 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.8052691,130.7054642&destination=32.8033338,130.7037621",
+    "durationMin": 5
   },
   {
     "from": 12,
     "to": 13,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.8033338,130.7037621&destination=33.166736,130.4167972"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "1 小時 30 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=32.8033338,130.7037621&destination=33.166736,130.4167972",
+    "durationMin": 90
   },
   {
     "from": 13,
     "to": 14,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.166736,130.4167972&destination=33.5647723,130.4403204"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "1 小時 10 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.166736,130.4167972&destination=33.5647723,130.4403204",
+    "durationMin": 70
   },
   {
     "from": 14,
     "to": 15,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.5647723,130.4403204&destination=33.5809148,130.4030175"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "12 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.5647723,130.4403204&destination=33.5809148,130.4030175",
+    "durationMin": 12
   },
   {
     "from": 15,
     "to": 16,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.5809148,130.4030175&destination=33.6611105,130.3634121"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "35 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.5809148,130.4030175&destination=33.6611105,130.3634121",
+    "durationMin": 35
   },
   {
     "from": 16,
     "to": 17,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.6611105,130.3634121&destination=33.1819093,130.0182516"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "1 小時 40 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.6611105,130.3634121&destination=33.1819093,130.0182516",
+    "durationMin": 100
   },
   {
     "from": 17,
     "to": 18,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.1819093,130.0182516&destination=33.1891306,130.0236617"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "5 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.1819093,130.0182516&destination=33.1891306,130.0236617",
+    "durationMin": 5
   },
   {
     "from": 18,
     "to": 19,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.1891306,130.0236617&destination=33.370780473166405,130.52972583190007"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "45 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.1891306,130.0236617&destination=33.370780473166405,130.52972583190007",
+    "durationMin": 45
   },
   {
     "from": 19,
     "to": 20,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.370780473166405,130.52972583190007&destination=33.1492876,130.3039094"
+    "mode": "driving",
+    "modeLabel": "自駕",
+    "duration": "35 分鐘",
+    "note": "Google Maps 規劃",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.370780473166405,130.52972583190007&destination=33.1492876,130.3039094",
+    "durationMin": 35
   },
   {
     "from": 20,
     "to": 21,
-    "mode": "unknown",
-    "modeLabel": "待確認",
-    "duration": "待確認",
-    "note": "待確認",
-    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.1492876,130.3039094&destination=25.0793174,121.2345977"
+    "mode": "flight",
+    "modeLabel": "飛機",
+    "duration": "2 小時 30 分鐘",
+    "note": "Tigerair Taiwan",
+    "googleMapsUrl": "https://www.google.com/maps/dir/?api=1&origin=33.1492876,130.3039094&destination=25.0793174,121.2345977",
+    "durationMin": 150
   }
 ]
