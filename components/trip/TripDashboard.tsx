@@ -9,6 +9,7 @@ type Props = {
 
 export function TripDashboard({ locations, routes, days }: Props) {
   const dailyRouteMinutes = routeMinutesByDay(locations, routes);
+  const formatSummary = (summary: string) => summary.replace(/\s*\?\s*/g, ' → ');
 
   return (
     <section className="mt-6 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70">
@@ -35,7 +36,7 @@ export function TripDashboard({ locations, routes, days }: Props) {
                 <p className="font-black">Day {day.day}</p>
               </div>
               <p className="text-sm font-bold text-slate-700">{day.date} · {day.title}</p>
-              <p className="mt-2 text-sm leading-6 text-slate-500">{day.summary}</p>
+              <p className="mt-2 text-sm leading-6 text-slate-500">{formatSummary(day.summary)}</p>
               <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold">
                 <span className="rounded-full bg-white px-3 py-1 text-slate-600">{count} 個點</span>
                 <span className="rounded-full bg-white px-3 py-1 text-blue-700">{routeTime}</span>

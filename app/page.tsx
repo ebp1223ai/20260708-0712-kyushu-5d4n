@@ -5,7 +5,6 @@ import { Hero } from '@/components/layout/Hero';
 import { SummaryCards } from '@/components/trip/SummaryCards';
 import { TripDashboard } from '@/components/trip/TripDashboard';
 import { DailyPlan } from '@/components/trip/DailyPlan';
-import { RouteTimeline } from '@/components/trip/RouteTimeline';
 import { TripMapClient } from '@/components/map/TripMapClient';
 
 export default function Home() {
@@ -27,10 +26,6 @@ export default function Home() {
             <DailyPlan locations={locations} routes={routes} days={days} />
           </section>
         </div>
-        <section className="mt-6 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70">
-          <h2 className="text-xl font-black text-slate-900">交通路線與移動時間</h2>
-          <RouteTimeline locations={locations} routes={routes} />
-        </section>
       </section>
     </main>
   );
