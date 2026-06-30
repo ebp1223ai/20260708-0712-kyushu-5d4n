@@ -1,6 +1,6 @@
 # 20260708-0712 Kyushu 5D4N
 
-2026/07/08-07/12 九州五天四夜互動旅遊網站。
+2026/07/08-07/12 Kyushu 5D4N interactive travel website.
 
 Production: https://20260708-0712-kyushu-5d4n.vercel.app
 
@@ -33,6 +33,20 @@ Before committing:
 npm run build
 ```
 
+## AI Workflow
+
+Before starting any AI-assisted work:
+
+1. Read `docs/PROJECT.md`.
+2. Read `docs/AI_CONTEXT.md`.
+3. Select the matching prompt template from `prompts/`.
+4. Keep the task limited to one issue or one feature.
+5. Do not change `data/*.json` schema without explicit approval.
+6. Do not add npm packages without explicit approval.
+7. Run `npm run build` before commit or push.
+
+Codex is responsible for coding, build, test, commit, and push when requested. Owner-only areas such as GitHub ownership, Vercel ownership, domains, billing, API keys, and secrets remain under the project owner.
+
 ## Documentation
 
 - [Project Vision](docs/PROJECT.md)
@@ -46,6 +60,20 @@ npm run build
 - [Release](docs/RELEASE.md)
 - [Contributing](docs/CONTRIBUTING.md)
 - [Issue Template](docs/ISSUE_TEMPLATE.md)
+- [Security](docs/SECURITY.md)
+- [Deployment](docs/DEPLOYMENT.md)
+- [Development](docs/DEVELOPMENT.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [AI Context](docs/AI_CONTEXT.md)
+
+## Prompt Templates
+
+- [Feature](prompts/feature.md)
+- [Bugfix](prompts/bugfix.md)
+- [Refactor](prompts/refactor.md)
+- [Documentation](prompts/documentation.md)
+- [Release](prompts/release.md)
+- [UI Polish](prompts/ui-polish.md)
 
 ## Deployment
 

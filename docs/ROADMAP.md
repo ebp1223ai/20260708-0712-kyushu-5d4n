@@ -11,11 +11,11 @@
 
 ## v1.1 UI Polish
 
-- Mobile layout optimization.
-- Timeline accordion.
-- Better map interactions.
-- Highlight selected marker.
-- More refined card spacing and states.
+- Remove or soften the Taoyuan to Oita flight route line.
+- Convert Timeline to Accordion.
+- Click Timeline item to trigger map FlyTo and Marker Highlight.
+- Optimize mobile map and itinerary layout.
+- Improve Google Maps link and navigation clarity.
 
 ## v1.2 Travel Replay
 
@@ -27,7 +27,8 @@
 
 - Attraction photos.
 - Attraction descriptions.
-- Place icons and richer cards.
+- Place detail cards.
+- Place icons.
 
 ## v1.4 Utility
 
