@@ -1,15 +1,17 @@
 # 20260708-0712 Kyushu 5D4N
 
-2026/07/08–07/12 九州五天四夜旅遊網站。
+2026/07/08–07/12 九州五天四夜互動旅遊網站。
 
-## 功能
+## v1.0 功能
 
-- 18 個景點
-- Day 1～Day 5 篩選
-- 互動式地圖
+- 首頁 Hero
+- 旅程儀表板
+- 18 個點位
+- Day 1～Day 5 每日行程
+- 互動式 OpenStreetMap 地圖
 - 移動軌跡
 - 每段交通時間
-- Google Maps 導航連結
+- Google Maps 景點與導航連結
 - 手機 RWD
 - PWA manifest，可加入手機主畫面
 
@@ -38,3 +40,4 @@ http://localhost:3000
 
 - `data/locations.json`：景點、飯店、機場位置
 - `data/routes.json`：每段移動時間與交通工具
+- `data/days.json`：每日行程摘要

@@ -1,4 +1,4 @@
-import type { Location } from '@/components/types';
+import type { Location } from '@/components/trip/types';
 
 export function googleMapsPlaceUrl(location: Location) {
   return `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`;
