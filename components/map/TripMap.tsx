@@ -34,11 +34,11 @@ export default function TripMap({ locations, routes }: Props) {
         color: from.color,
       };
     })
-    .filter(Boolean) as { route: RouteSegment; positions: [number, number][]; color: string }[];
+    .filter((route): route is { route: RouteSegment; positions: [number, number][]; color: string } => route !== null);
 
   return (
     <div id="map" className="h-[520px] overflow-hidden rounded-3xl md:h-[680px]">
-      <MapContainer center={center} zoom={8} scrollWheelZoom={false}>
+      <MapContainer center={center} zoom={8} scrollWheelZoom={false} className="h-full w-full">
         <TileLayer
           attribution='&copy; OpenStreetMap contributors'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -50,7 +50,7 @@ export default function TripMap({ locations, routes }: Props) {
             positions={positions}
             pathOptions={{ color, weight: 5, opacity: 0.78 }}
           >
-            <Tooltip sticky>{route.note}｜{route.duration}</Tooltip>
+            <Tooltip sticky>{route.note} · {route.duration}</Tooltip>
           </Polyline>
         ))}
 

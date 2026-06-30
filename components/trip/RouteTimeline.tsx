@@ -23,7 +23,7 @@ export function RouteTimeline({ locations, routes }: Props) {
                 className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-xs font-black text-white"
                 style={{ backgroundColor: from.color }}
               >
-                {route.from}→{route.to}
+                {route.from} → {route.to}
               </div>
               <div className="min-w-0 flex-1">
                 <p className="font-black text-slate-900">{route.note}</p>
@@ -37,7 +37,7 @@ export function RouteTimeline({ locations, routes }: Props) {
                   rel="noreferrer"
                   className="mt-3 block text-sm font-bold text-blue-600 underline underline-offset-4"
                 >
-                  開啟 Google Maps 路線
+                  開啟 Google Maps 導航
                 </a>
               </div>
             </div>

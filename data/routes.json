@@ -1,138 +1,19 @@
 [
-  {
-    "from": 1,
-    "to": 2,
-    "mode": "flight",
-    "modeLabel": "✈️ 飛機",
-    "duration": "約 2小時20分",
-    "note": "桃園國際機場 → 大分機場"
-  },
-  {
-    "from": 2,
-    "to": 3,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 50～60分",
-    "note": "大分機場 → 別府龜之井飯店"
-  },
-  {
-    "from": 3,
-    "to": 4,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 35分",
-    "note": "別府龜之井飯店 → 九州自然野生動物園"
-  },
-  {
-    "from": 4,
-    "to": 5,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 20分",
-    "note": "九州自然野生動物園 → 海地獄"
-  },
-  {
-    "from": 5,
-    "to": 6,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 35～40分",
-    "note": "海地獄 → 湯布院"
-  },
-  {
-    "from": 6,
-    "to": 7,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 2小時15～30分",
-    "note": "湯布院 → ARK HOTEL 熊本城前"
-  },
-  {
-    "from": 7,
-    "to": 8,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 10～15分",
-    "note": "ARK HOTEL 熊本城前 → 萌熊電車"
-  },
-  {
-    "from": 8,
-    "to": 9,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 10分",
-    "note": "萌熊電車 → 熊本城"
-  },
-  {
-    "from": 9,
-    "to": 10,
-    "mode": "walk",
-    "modeLabel": "🚶 步行",
-    "duration": "約 5分",
-    "note": "熊本城 → 櫻之馬場城彩苑"
-  },
-  {
-    "from": 10,
-    "to": 11,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 60分",
-    "note": "櫻之馬場城彩苑 → 柳川遊船"
-  },
-  {
-    "from": 11,
-    "to": 12,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 1小時15分",
-    "note": "柳川遊船 → 三井福岡 LaLaport"
-  },
-  {
-    "from": 12,
-    "to": 13,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 20分",
-    "note": "三井福岡 LaLaport → 福岡天神南昆特薩飯店"
-  },
-  {
-    "from": 13,
-    "to": 14,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 35分",
-    "note": "福岡天神南昆特薩飯店 → 海之中道海洋世界"
-  },
-  {
-    "from": 14,
-    "to": 15,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 1小時40～50分",
-    "note": "海之中道海洋世界 → 御船山樂園"
-  },
-  {
-    "from": 15,
-    "to": 16,
-    "mode": "walk",
-    "modeLabel": "🚶 步行",
-    "duration": "約 5分",
-    "note": "御船山樂園 → 武雄圖書館"
-  },
-  {
-    "from": 16,
-    "to": 17,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 40～50分",
-    "note": "武雄圖書館 → ANA Holiday Inn 鳥栖"
-  },
-  {
-    "from": 17,
-    "to": 18,
-    "mode": "bus",
-    "modeLabel": "🚌 遊覽車",
-    "duration": "約 45～50分",
-    "note": "ANA Holiday Inn 鳥栖 → 佐賀機場"
-  }
+  { "from": 1, "to": 2, "mode": "flight", "modeLabel": "飛機", "duration": "約 2 小時 20 分", "note": "桃園國際機場到大分機場" },
+  { "from": 2, "to": 3, "mode": "bus", "modeLabel": "巴士", "duration": "約 50 分", "note": "大分機場到別府住宿" },
+  { "from": 3, "to": 4, "mode": "bus", "modeLabel": "巴士", "duration": "約 35 分", "note": "別府住宿到由布院金鱗湖" },
+  { "from": 4, "to": 5, "mode": "bus", "modeLabel": "巴士", "duration": "約 20 分", "note": "由布院金鱗湖到別府地獄巡禮" },
+  { "from": 5, "to": 6, "mode": "bus", "modeLabel": "巴士", "duration": "約 35 分", "note": "別府地獄巡禮到由布院老街" },
+  { "from": 6, "to": 7, "mode": "bus", "modeLabel": "巴士", "duration": "約 2 小時 15 分", "note": "由布院老街到 ARK HOTEL 熊本城前" },
+  { "from": 7, "to": 8, "mode": "bus", "modeLabel": "巴士", "duration": "約 15 分", "note": "ARK HOTEL 熊本城前到熊本站" },
+  { "from": 8, "to": 9, "mode": "bus", "modeLabel": "巴士", "duration": "約 10 分", "note": "熊本站到熊本城" },
+  { "from": 9, "to": 10, "mode": "walk", "modeLabel": "步行", "duration": "約 5 分", "note": "熊本城到櫻之馬場城彩苑" },
+  { "from": 10, "to": 11, "mode": "bus", "modeLabel": "巴士", "duration": "約 60 分", "note": "櫻之馬場城彩苑到柳川遊船" },
+  { "from": 11, "to": 12, "mode": "bus", "modeLabel": "巴士", "duration": "約 1 小時 15 分", "note": "柳川遊船到三井 LaLaport 福岡" },
+  { "from": 12, "to": 13, "mode": "bus", "modeLabel": "巴士", "duration": "約 20 分", "note": "三井 LaLaport 福岡到博多住宿" },
+  { "from": 13, "to": 14, "mode": "bus", "modeLabel": "巴士", "duration": "約 35 分", "note": "博多住宿到糸島二見浦夫婦岩" },
+  { "from": 14, "to": 15, "mode": "bus", "modeLabel": "巴士", "duration": "約 1 小時 40 分", "note": "糸島二見浦夫婦岩到武雄溫泉樓門" },
+  { "from": 15, "to": 16, "mode": "walk", "modeLabel": "步行", "duration": "約 5 分", "note": "武雄溫泉樓門到御船山樂園" },
+  { "from": 16, "to": 17, "mode": "bus", "modeLabel": "巴士", "duration": "約 40 分", "note": "御船山樂園到 ANA Holiday Inn 佐賀" },
+  { "from": 17, "to": 18, "mode": "bus", "modeLabel": "巴士", "duration": "約 45 分", "note": "ANA Holiday Inn 佐賀到佐賀機場" }
 ]

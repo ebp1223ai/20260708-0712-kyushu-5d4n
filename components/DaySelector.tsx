@@ -6,14 +6,14 @@ import { googleMapsPlaceUrl } from '@/lib/maps';
 
 type Props = {
   locations: Location[];
-  routes: RouteSegment[];
+  routes?: RouteSegment[];
 };
 
 export function DaySelector({ locations }: Props) {
   const [selectedDay, setSelectedDay] = useState<number | 'all'>('all');
 
   const days = useMemo(() => {
-    return Array.from(new Set(locations.map((location) => location.day))).sort();
+    return Array.from(new Set(locations.map((location) => location.day))).sort((a, b) => a - b);
   }, [locations]);
 
   const filtered = selectedDay === 'all'
@@ -25,7 +25,7 @@ export function DaySelector({ locations }: Props) {
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="text-xl font-bold">每日行程</h2>
-          <p className="text-sm text-slate-500">切換日期查看點位；點擊可開 Google Maps。</p>
+          <p className="text-sm text-slate-500">依日期篩選景點，點擊卡片可開啟 Google Maps。</p>
         </div>
 
         <div className="flex gap-2 overflow-x-auto pb-1">
