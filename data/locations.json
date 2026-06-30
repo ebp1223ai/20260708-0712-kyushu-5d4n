@@ -15,7 +15,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=25.0793174%2C121.2345977",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap relation 19784610; query: Taiwan Taoyuan International Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap relation 19784610; query: Taiwan Taoyuan International Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 1,
+    "order": 1
   },
   {
     "id": 2,
@@ -33,7 +35,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.4802532%2C131.7359598",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap way 866690235; query: Oita Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap way 866690235; query: Oita Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 2,
+    "order": 2
   },
   {
     "id": 3,
@@ -51,7 +55,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.2765191%2C131.4998512",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap way 1390216718; query: Kamenoi Hotel Beppu; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap way 1390216718; query: Kamenoi Hotel Beppu; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 3,
+    "order": 3
   },
   {
     "id": 4,
@@ -69,7 +75,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.354%2C131.41152778",
     "verified": true,
-    "notes": "Verified via Wikidata Q11370332 P625; query: 九州自然動物公園アフリカンサファリ; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Wikidata Q11370332 P625; query: 九州自然動物公園アフリカンサファリ; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 4,
+    "order": 4
   },
   {
     "id": 5,
@@ -87,7 +95,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.31683%2C131.4687332",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap way 418202285; query: Umi Jigoku; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap way 418202285; query: Umi Jigoku; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 5,
+    "order": 5
   },
   {
     "id": 6,
@@ -105,7 +115,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.2675137%2C131.365641",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap way 1323836250; query: Yufuin Floral Village; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap way 1323836250; query: Yufuin Floral Village; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 6,
+    "order": 6
   },
   {
     "id": 7,
@@ -123,7 +135,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.2667196%2C131.3690386",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: Kinrin Lake; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: Kinrin Lake; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 7,
+    "order": 7
   },
   {
     "id": 8,
@@ -141,7 +155,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=32.5964996%2C130.7069304",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: イオンモール宇城; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: イオンモール宇城; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 8,
+    "order": 8
   },
   {
     "id": 9,
@@ -159,7 +175,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8070132%2C130.7102851",
     "verified": true,
-    "notes": "Verified via Photon/OpenStreetMap; query: アークホテル熊本城前; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Photon/OpenStreetMap; query: アークホテル熊本城前; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 9,
+    "order": 9
   },
   {
     "id": 10,
@@ -177,7 +195,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=32.827469%2C130.7219932",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: Kitakumamoto Station; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: Kitakumamoto Station; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 10,
+    "order": 10
   },
   {
     "id": 11,
@@ -195,7 +215,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8052691%2C130.7054642",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: Kumamoto Castle; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: Kumamoto Castle; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 11,
+    "order": 11
   },
   {
     "id": 12,
@@ -213,7 +235,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=32.8033338%2C130.7037621",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: 桜の馬場 城彩苑; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: 桜の馬場 城彩苑; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 12,
+    "order": 12
   },
   {
     "id": 13,
@@ -231,7 +255,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.166736%2C130.4167972",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: 水郷柳川観光; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: 水郷柳川観光; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 13,
+    "order": 13
   },
   {
     "id": 14,
@@ -249,7 +275,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.5647723%2C130.4403204",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: LaLaport Fukuoka; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: LaLaport Fukuoka; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 14,
+    "order": 14
   },
   {
     "id": 15,
@@ -267,7 +295,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.5809148%2C130.4030175",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: クインテッサホテル福岡天神南; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: クインテッサホテル福岡天神南; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 15,
+    "order": 15
   },
   {
     "id": 16,
@@ -285,7 +315,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.6611105%2C130.3634121",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: Marine World Uminonakamichi; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: Marine World Uminonakamichi; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 16,
+    "order": 16
   },
   {
     "id": 17,
@@ -303,7 +335,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.1819093%2C130.0182516",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap; query: Mifuneyama Rakuen; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap; query: Mifuneyama Rakuen; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 17,
+    "order": 17
   },
   {
     "id": 18,
@@ -321,7 +355,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.1891306%2C130.0236617",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap way 454252769; query: Takeo City Library; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap way 454252769; query: Takeo City Library; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 18,
+    "order": 18
   },
   {
     "id": 19,
@@ -337,9 +373,11 @@
     "color": "#FFFF00",
     "geocodeQuery": "Holiday Inn ANA Saga Tosu 789-1 Sakai Nishimachi, Tosu, Saga 841-0042日本",
     "googlePlaceId": "",
-    "googleMapsUrl": "",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.370780473166405,130.52972583190007",
     "verified": true,
-    "notes": "Manual verified: ANA Holiday Inn 鳥栖 coordinates provided by user; previous: No exact result from Nominatim, Photon/OpenStreetMap, or Wikidata for Holiday Inn ANA Saga Tosu at 789-1 Sakai Nishimachi, Tosu, Saga 841-0042 Japan. Lat/Lng intentionally left null."
+    "notes": "Manual verified: ANA Holiday Inn 鳥栖 coordinates provided by user; previous: No exact result from Nominatim, Photon/OpenStreetMap, or Wikidata for Holiday Inn ANA Saga Tosu at 789-1 Sakai Nishimachi, Tosu, Saga 841-0042 Japan. Lat/Lng intentionally left null.",
+    "index": 19,
+    "order": 19
   },
   {
     "id": 20,
@@ -357,7 +395,9 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=33.1492876%2C130.3039094",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap relation 5601357; query: Saga Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap relation 5601357; query: Saga Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 20,
+    "order": 20
   },
   {
     "id": 21,
@@ -375,6 +415,8 @@
     "googlePlaceId": "",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=25.0793174%2C121.2345977",
     "verified": true,
-    "notes": "Verified via Nominatim/OpenStreetMap relation 19784610; query: Taiwan Taoyuan International Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured."
+    "notes": "Verified via Nominatim/OpenStreetMap relation 19784610; query: Taiwan Taoyuan International Airport; GooglePlaceId unavailable because Google Maps Geocoding API key was not configured.",
+    "index": 21,
+    "order": 21
   }
 ]
