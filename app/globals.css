@@ -28,3 +28,76 @@ body {
 .btn-soft {
   border-radius: 999px; background: #eef4ff; padding: .7rem 1rem; color: #10233f; font-weight: 800;
 }
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #fff;
+    color: #111827;
+  }
+
+  main {
+    background: #fff !important;
+  }
+
+  section {
+    margin-top: 1rem !important;
+  }
+
+  main,
+  section,
+  article,
+  .glass-card,
+  .leaflet-container,
+  #timeline,
+  #timeline article,
+  .grid > article,
+  .space-y-3 > a,
+  .space-y-5 > section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  button,
+  [role='button'],
+  .btn-primary,
+  .btn-soft,
+  .leaflet-control,
+  .leaflet-top,
+  .leaflet-bottom,
+  .leaflet-pane.leaflet-tooltip-pane,
+  .fixed,
+  [class*='fixed'],
+  [class*='rounded-full'][class*='shadow'] {
+    display: none !important;
+  }
+
+  .leaflet-container {
+    height: 420px !important;
+    min-height: 420px !important;
+    max-height: 420px !important;
+    overflow: hidden !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .glass-card,
+  .shadow-xl,
+  [class*='shadow-'] {
+    box-shadow: none !important;
+  }
+
+  .bg-gradient-to-b,
+  [class*='bg-gradient'] {
+    background: #fff !important;
+  }
+}

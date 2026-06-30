@@ -1,6 +1,15 @@
-export function SummaryCards() {
+import type { Location } from './types';
+
+type Props = {
+  locations: Location[];
+};
+
+export function SummaryCards({ locations }: Props) {
+  const indexes = locations.map((location) => location.id);
+  const firstIndex = Math.min(...indexes);
+  const lastIndex = Math.max(...indexes);
   const items = [
-    ['景點與交通點', '18', 'Index 1 到 18'],
+    ['景點與交通點', String(locations.length), `Index ${firstIndex} 到 ${lastIndex}`],
     ['旅遊天數', '5', '7/8 到 7/12'],
     ['預估移動時間', '13h40m', '含飛機、公車與步行'],
     ['交通方式', '飛機 / 巴士 / 步行', '串接 Google Maps 導航'],
