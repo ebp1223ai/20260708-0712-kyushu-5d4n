@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "name": "桃園國際機場",
+    "date": "7/8",
+    "day": 1,
+    "type": "airport",
+    "address": "桃園市大園區航站南路9號",
+    "lat": 25.079,
+    "lng": 121.232,
+    "color": "#ef4444"
+  },
+  {
+    "id": 2,
+    "name": "大分機場",
+    "date": "7/8",
+    "day": 1,
+    "type": "airport",
+    "address": "大分縣國東市安岐町下原1606-1",
+    "lat": 33.476,
+    "lng": 131.739,
+    "color": "#ef4444"
+  },
+  {
+    "id": 3,
+    "name": "別府龜之井飯店",
+    "date": "7/8",
+    "day": 1,
+    "type": "hotel",
+    "address": "大分縣別府市中央町5-17",
+    "lat": 33.282,
+    "lng": 131.5,
+    "color": "#ef4444"
+  },
+  {
+    "id": 4,
+    "name": "九州自然野生動物園",
+    "date": "7/9",
+    "day": 2,
+    "type": "attraction",
+    "address": "大分縣宇佐市安心院町南畑2-1755-1",
+    "lat": 33.364,
+    "lng": 131.428,
+    "color": "#22c55e"
+  },
+  {
+    "id": 5,
+    "name": "海地獄",
+    "date": "7/9",
+    "day": 2,
+    "type": "attraction",
+    "address": "大分縣別府市大字鐵輪559-1",
+    "lat": 33.314,
+    "lng": 131.481,
+    "color": "#22c55e"
+  },
+  {
+    "id": 6,
+    "name": "湯布院",
+    "date": "7/9",
+    "day": 2,
+    "type": "attraction",
+    "address": "大分縣由布市湯布院町川上",
+    "lat": 33.262,
+    "lng": 131.362,
+    "color": "#22c55e"
+  },
+  {
+    "id": 7,
+    "name": "ARK HOTEL 熊本城前",
+    "date": "7/9",
+    "day": 2,
+    "type": "hotel",
+    "address": "5-16 Jotomachi, Chuo Ward, Kumamoto, 860-0846日本",
+    "lat": 32.805,
+    "lng": 130.709,
+    "color": "#22c55e"
+  },
+  {
+    "id": 8,
+    "name": "萌熊電車",
+    "date": "7/10",
+    "day": 3,
+    "type": "transport",
+    "address": "熊本縣熊本市中央區黑髮3-7-27",
+    "lat": 32.819,
+    "lng": 130.725,
+    "color": "#3b82f6"
+  },
+  {
+    "id": 9,
+    "name": "熊本城",
+    "date": "7/10",
+    "day": 3,
+    "type": "attraction",
+    "address": "熊本縣熊本市中央區本丸1-1",
+    "lat": 32.806,
+    "lng": 130.703,
+    "color": "#3b82f6"
+  },
+  {
+    "id": 10,
+    "name": "櫻之馬場城彩苑",
+    "date": "7/10",
+    "day": 3,
+    "type": "attraction",
+    "address": "熊本縣熊本市中央區二之丸1-1-1",
+    "lat": 32.803,
+    "lng": 130.701,
+    "color": "#3b82f6"
+  },
+  {
+    "id": 11,
+    "name": "柳川遊船",
+    "date": "7/10",
+    "day": 3,
+    "type": "attraction",
+    "address": "福岡縣柳川市三橋町下百町1-6",
+    "lat": 33.159,
+    "lng": 130.418,
+    "color": "#3b82f6"
+  },
+  {
+    "id": 12,
+    "name": "三井福岡 LaLaport",
+    "date": "7/10",
+    "day": 3,
+    "type": "shopping",
+    "address": "福岡縣福岡市博多區那珂6-23-1",
+    "lat": 33.575,
+    "lng": 130.443,
+    "color": "#3b82f6"
+  },
+  {
+    "id": 13,
+    "name": "福岡天神南昆特薩飯店",
+    "date": "7/10",
+    "day": 3,
+    "type": "hotel",
+    "address": "福岡縣福岡市中央區春吉3-5-7",
+    "lat": 33.587,
+    "lng": 130.404,
+    "color": "#3b82f6"
+  },
+  {
+    "id": 14,
+    "name": "海之中道海洋世界",
+    "date": "7/11",
+    "day": 4,
+    "type": "attraction",
+    "address": "福岡縣福岡市東區西戶崎18-28",
+    "lat": 33.661,
+    "lng": 130.363,
+    "color": "#eab308"
+  },
+  {
+    "id": 15,
+    "name": "御船山樂園",
+    "date": "7/11",
+    "day": 4,
+    "type": "attraction",
+    "address": "佐賀縣武雄市武雄町大字武雄4100",
+    "lat": 33.189,
+    "lng": 130.016,
+    "color": "#eab308"
+  },
+  {
+    "id": 16,
+    "name": "武雄圖書館",
+    "date": "7/11",
+    "day": 4,
+    "type": "attraction",
+    "address": "佐賀縣武雄市武雄町大字武雄5304-1",
+    "lat": 33.19,
+    "lng": 130.018,
+    "color": "#eab308"
+  },
+  {
+    "id": 17,
+    "name": "ANA Holiday Inn 鳥栖",
+    "date": "7/11",
+    "day": 4,
+    "type": "hotel",
+    "address": "佐賀縣鳥栖市大正町809-1",
+    "lat": 33.376,
+    "lng": 130.522,
+    "color": "#eab308"
+  },
+  {
+    "id": 18,
+    "name": "佐賀機場",
+    "date": "7/12",
+    "day": 5,
+    "type": "airport",
+    "address": "佐賀縣佐賀市川副町大字犬井道9476-187",
+    "lat": 33.149,
+    "lng": 130.302,
+    "color": "#d946ef"
+  }
+]

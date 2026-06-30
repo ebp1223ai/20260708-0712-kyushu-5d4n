@@ -1,0 +1,16 @@
+{
+  "name": "九州五天四夜",
+  "short_name": "九州旅遊",
+  "description": "2026/07/08–07/12 九州五天四夜旅遊網站",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eaf6ff",
+  "theme_color": "#10233f",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
