@@ -8,9 +8,14 @@ Before starting work, read:
 
 1. `docs/PROJECT.md`
 2. `docs/AI_CONTEXT.md`
-3. The issue or task description
-4. The matching prompt template in `prompts/`
-5. Relevant files in `app/`, `components/`, `data/`, and `lib/`
+3. `.ai/context.md`
+4. `docs/ARCHITECTURE.md`
+5. `docs/DATA_SCHEMA.md`
+6. `docs/CODE_STYLE.md`
+7. `docs/DECISIONS.md`
+8. The issue or task description
+9. The matching prompt template in `prompts/` or `.ai/templates/`
+10. Relevant files in `app/`, `components/`, `data/`, and `lib/`
 
 ## Work Scope
 
@@ -19,6 +24,7 @@ Before starting work, read:
 - Do not combine unrelated refactors with product changes.
 - Do not rewrite the project structure unless the task explicitly requires it.
 - Use the prompt templates in `prompts/` as the workflow contract for feature, bugfix, refactor, documentation, release, and UI polish tasks.
+- Use `.ai/` as the compact shared AI workspace for context, workflow, commands, and templates.
 
 ## Data Rules
 

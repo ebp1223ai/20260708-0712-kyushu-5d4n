@@ -39,13 +39,20 @@ Before starting any AI-assisted work:
 
 1. Read `docs/PROJECT.md`.
 2. Read `docs/AI_CONTEXT.md`.
-3. Select the matching prompt template from `prompts/`.
-4. Keep the task limited to one issue or one feature.
-5. Do not change `data/*.json` schema without explicit approval.
-6. Do not add npm packages without explicit approval.
-7. Run `npm run build` before commit or push.
+3. Read `.ai/context.md`.
+4. Select the matching prompt template from `prompts/` or `.ai/templates/`.
+5. Keep the task limited to one issue or one feature.
+6. Do not change `data/*.json` schema without explicit approval.
+7. Do not add npm packages without explicit approval.
+8. Run `npm run build` before commit or push.
 
 Codex is responsible for coding, build, test, commit, and push when requested. Owner-only areas such as GitHub ownership, Vercel ownership, domains, billing, API keys, and secrets remain under the project owner.
+
+## AI Workspace
+
+- `docs/`: human-readable project, architecture, workflow, safety, and release documentation.
+- `.ai/`: compact AI workspace for shared context, workflow, commands, and reusable templates.
+- `prompts/`: Codex-oriented task prompt templates.
 
 ## Documentation
 
@@ -65,6 +72,9 @@ Codex is responsible for coding, build, test, commit, and push when requested. O
 - [Development](docs/DEVELOPMENT.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [AI Context](docs/AI_CONTEXT.md)
+- [Architecture Decisions](docs/DECISIONS.md)
+- [Code Style](docs/CODE_STYLE.md)
+- [Version History](docs/VERSION.md)
 
 ## Prompt Templates
 
@@ -74,6 +84,17 @@ Codex is responsible for coding, build, test, commit, and push when requested. O
 - [Documentation](prompts/documentation.md)
 - [Release](prompts/release.md)
 - [UI Polish](prompts/ui-polish.md)
+
+## AI Workspace Files
+
+- [.ai README](.ai/README.md)
+- [.ai Context](.ai/context.md)
+- [.ai Workflow](.ai/workflow.md)
+- [.ai Commands](.ai/commands.md)
+- [.ai Feature Template](.ai/templates/feature.md)
+- [.ai Bugfix Template](.ai/templates/bugfix.md)
+- [.ai Review Template](.ai/templates/review.md)
+- [.ai Release Template](.ai/templates/release.md)
 
 ## Deployment
 
