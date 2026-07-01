@@ -28,3 +28,20 @@ export type DayInfo = {
   summary: string;
   traffic: string;
 };
+
+export type SpotGuide = {
+  locationId: number;
+  summary: string;
+  recommendationLevel: number;
+  suggestedStayMinutes: number;
+  bestPhotoTime: string;
+  mustPhoto: string[];
+  mustVideo: string[];
+  mustEat: string[];
+  mustBuy: string[];
+  mustDo: string[];
+  familyTips: string[];
+  photoTips: string[];
+  checklist: string[];
+  tips: string[];
+};

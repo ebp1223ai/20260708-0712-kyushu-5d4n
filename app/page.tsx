@@ -1,10 +1,12 @@
 import locations from '@/data/locations.json';
 import routes from '@/data/routes.json';
 import days from '@/data/days.json';
+import spotGuides from '@/data/spotGuides.json';
 import { Hero } from '@/components/layout/Hero';
 import { SummaryCards } from '@/components/trip/SummaryCards';
 import { TripDashboard } from '@/components/trip/TripDashboard';
 import { TripExperience } from '@/components/trip/TripExperience';
+import { SpotGuides } from '@/components/trip/SpotGuides';
 
 export default function Home() {
   return (
@@ -14,6 +16,7 @@ export default function Home() {
         <SummaryCards locations={locations} routes={routes} />
         <TripDashboard locations={locations} routes={routes} days={days} />
         <TripExperience locations={locations} routes={routes} days={days} />
+        <SpotGuides locations={locations} guides={spotGuides} />
         <footer className="mt-8 pb-4 text-center text-xs font-bold text-slate-400">
           2026 九州五天四夜行程
         </footer>

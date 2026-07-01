@@ -75,6 +75,8 @@ body {
   .itinerary-stop,
   .route-connector,
   .day-itinerary,
+  .spot-guides,
+  .spot-guide-card,
   .glass-card,
   .leaflet-container,
   #timeline,
@@ -84,6 +86,7 @@ body {
   .route-connector,
   .itinerary-stop,
   .day-itinerary,
+  .spot-guide-card,
   .space-y-5 > section {
     break-inside: avoid;
     page-break-inside: avoid;
@@ -132,5 +135,13 @@ body {
   .route-connector {
     font-size: 12px !important;
     line-height: 1.45 !important;
+  }
+
+  .spot-guide-card {
+    box-shadow: none !important;
+  }
+
+  .spot-guide-card:not([open]) > div {
+    display: grid !important;
   }
 }
