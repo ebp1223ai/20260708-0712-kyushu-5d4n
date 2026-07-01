@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import type { DayInfo, Location, RouteSegment } from '@/components/trip/types';
+import type { DaySelectionMode, EdgeVisibility } from '@/lib/tripPlan';
 
 const TripMap = dynamic(() => import('@/components/map/TripMap'), {
   ssr: false,
@@ -13,21 +14,17 @@ const TripMap = dynamic(() => import('@/components/map/TripMap'), {
 });
 
 type Props = {
-  selectedDay: number;
+  selectedDays: number[];
+  selectionMode: DaySelectionMode;
+  edgeVisibility: EdgeVisibility;
   onSelectDay: (day: number) => void;
+  onSelectionModeChange: (mode: DaySelectionMode) => void;
+  onEdgeVisibilityChange: (visibility: EdgeVisibility) => void;
   locations: Location[];
   routes: RouteSegment[];
   days: DayInfo[];
 };
 
-export function TripMapClient({ selectedDay, onSelectDay, locations, routes, days }: Props) {
-  return (
-    <TripMap
-      selectedDay={selectedDay}
-      onSelectDay={onSelectDay}
-      locations={locations}
-      routes={routes}
-      days={days}
-    />
-  );
+export function TripMapClient(props: Props) {
+  return <TripMap {...props} />;
 }

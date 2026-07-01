@@ -1,16 +1,46 @@
 import type { DayInfo, Location, RouteSegment } from './types';
 import { googleMapsPlaceUrl } from '@/lib/maps';
-import { compactDuration, dayColor, daySummarySteps, routeIcon } from '@/lib/tripPlan';
+import {
+  compactDuration,
+  dayColor,
+  daySummarySteps,
+  routeIcon,
+  type DaySelectionMode,
+  type EdgeVisibility,
+} from '@/lib/tripPlan';
 
 type Props = {
-  selectedDay: number;
+  selectedDays: number[];
+  selectionMode: DaySelectionMode;
+  edgeVisibility: EdgeVisibility;
   onSelectDay: (day: number) => void;
+  onSelectionModeChange: (mode: DaySelectionMode) => void;
+  onEdgeVisibilityChange: (visibility: EdgeVisibility) => void;
   locations: Location[];
   routes: RouteSegment[];
   days: DayInfo[];
 };
 
-export function DailyPlan({ selectedDay, onSelectDay, locations, routes, days }: Props) {
+const edgeOptions: { value: EdgeVisibility; label: string }[] = [
+  { value: 'all', label: '顯示全部' },
+  { value: 'hideStart', label: '隱藏頭段' },
+  { value: 'hideEnd', label: '隱藏尾段' },
+  { value: 'hideBoth', label: '隱藏頭尾' },
+];
+
+export function DailyPlan({
+  selectedDays,
+  selectionMode,
+  edgeVisibility,
+  onSelectDay,
+  onSelectionModeChange,
+  onEdgeVisibilityChange,
+  locations,
+  routes,
+  days,
+}: Props) {
+  const selectedSet = new Set(selectedDays);
+
   return (
     <section className="mt-8 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70">
       <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -18,33 +48,71 @@ export function DailyPlan({ selectedDay, onSelectDay, locations, routes, days }:
           <h2 className="text-xl font-black text-slate-900">每日行程</h2>
           <p className="mt-1 text-sm text-slate-500">景點與移動資訊已依日期串接，切換日期會同步更新地圖。</p>
         </div>
-        <div className="flex gap-2 overflow-x-auto pb-1 print:hidden">
-          {days.map((day) => {
-            const active = selectedDay === day.day;
-            const color = dayColor(day.day);
-
-            return (
-              <button
-                key={day.day}
-                type="button"
-                onClick={() => onSelectDay(day.day)}
-                className={`shrink-0 rounded-full border px-4 py-2 text-sm font-black transition ${
-                  active ? 'text-white shadow-lg' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
-                }`}
-                style={active ? { backgroundColor: color, borderColor: color } : undefined}
-              >
-                Day {day.day}
-              </button>
-            );
-          })}
+        <div className="flex flex-wrap gap-2 print:hidden">
+          <button
+            type="button"
+            onClick={() => onSelectionModeChange('single')}
+            className={`rounded-full border px-4 py-2 text-sm font-black ${
+              selectionMode === 'single' ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-600'
+            }`}
+          >
+            單選
+          </button>
+          <button
+            type="button"
+            onClick={() => onSelectionModeChange('range')}
+            className={`rounded-full border px-4 py-2 text-sm font-black ${
+              selectionMode === 'range' ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-slate-200 bg-white text-slate-600'
+            }`}
+          >
+            連續多選
+          </button>
         </div>
+      </div>
+
+      <div className="mb-4 flex gap-2 overflow-x-auto pb-1 print:hidden">
+        {days.map((day) => {
+          const active = selectedSet.has(day.day);
+          const color = dayColor(day.day);
+
+          return (
+            <button
+              key={day.day}
+              type="button"
+              onClick={() => onSelectDay(day.day)}
+              className={`shrink-0 rounded-full border px-4 py-2 text-sm font-black transition ${
+                active ? 'text-white shadow-lg' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+              }`}
+              style={active ? { backgroundColor: color, borderColor: color } : undefined}
+            >
+              Day {day.day}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="mb-5 flex gap-2 overflow-x-auto pb-1 print:hidden">
+        {edgeOptions.map((option) => (
+          <button
+            key={option.value}
+            type="button"
+            onClick={() => onEdgeVisibilityChange(option.value)}
+            className={`shrink-0 rounded-full border px-4 py-2 text-sm font-black ${
+              edgeVisibility === option.value
+                ? 'border-blue-600 bg-blue-600 text-white'
+                : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+            }`}
+          >
+            {option.label}
+          </button>
+        ))}
       </div>
 
       <div className="space-y-5">
         {days.map((day) => {
           const color = dayColor(day.day);
-          const steps = daySummarySteps(locations, routes, day);
-          const active = selectedDay === day.day;
+          const steps = daySummarySteps(locations, routes, day, edgeVisibility);
+          const active = selectedSet.has(day.day);
 
           return (
             <section

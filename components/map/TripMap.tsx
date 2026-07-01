@@ -1,15 +1,27 @@
 'use client';
 
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import L from 'leaflet';
 import { MapContainer, Marker, Polyline, Popup, TileLayer, Tooltip, useMap } from 'react-leaflet';
 import type { DayInfo, Location, RouteSegment } from '@/components/trip/types';
 import { googleMapsPlaceUrl } from '@/lib/maps';
-import { dayColor, itineraryLocationsForDay, routeIcon, routesForDay } from '@/lib/tripPlan';
+import {
+  dayColor,
+  itineraryLocationsForDayView,
+  locationsForSelectedDays,
+  routeIcon,
+  routesForDay,
+  type DaySelectionMode,
+  type EdgeVisibility,
+} from '@/lib/tripPlan';
 
 type Props = {
-  selectedDay: number;
+  selectedDays: number[];
+  selectionMode: DaySelectionMode;
+  edgeVisibility: EdgeVisibility;
   onSelectDay: (day: number) => void;
+  onSelectionModeChange: (mode: DaySelectionMode) => void;
+  onEdgeVisibilityChange: (visibility: EdgeVisibility) => void;
   locations: Location[];
   routes: RouteSegment[];
   days: DayInfo[];
@@ -20,6 +32,13 @@ type RoutePosition = {
   day: number;
   positions: [number, number][];
 };
+
+const edgeOptions: { value: EdgeVisibility; label: string }[] = [
+  { value: 'all', label: '顯示全部' },
+  { value: 'hideStart', label: '隱藏頭段' },
+  { value: 'hideEnd', label: '隱藏尾段' },
+  { value: 'hideBoth', label: '隱藏頭尾' },
+];
 
 function markerIcon(location: Location, color: string, active: boolean) {
   return L.divIcon({
@@ -33,9 +52,9 @@ function markerIcon(location: Location, color: string, active: boolean) {
 function arrowIcon(color: string, angle: number, active: boolean) {
   return L.divIcon({
     className: '',
-    html: `<div class="route-arrow" style="color:${color};opacity:${active ? 1 : 0.25};transform:rotate(${angle}deg)">➜</div>`,
-    iconSize: [24, 24],
-    iconAnchor: [12, 12],
+    html: `<div class="route-arrow ${active ? 'route-arrow-active' : ''}" style="--angle:${angle}deg;color:${color};opacity:${active ? 1 : 0.25}">➜</div>`,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
   });
 }
 
@@ -44,13 +63,6 @@ function midpoint(positions: [number, number][]) {
     (positions[0][0] + positions[1][0]) / 2,
     (positions[0][1] + positions[1][1]) / 2,
   ] as [number, number];
-}
-
-function bearing(positions: [number, number][]) {
-  const [from, to] = positions;
-  const y = to[1] - from[1];
-  const x = to[0] - from[0];
-  return Math.atan2(y, x) * (180 / Math.PI);
 }
 
 function FitBounds({ locations }: { locations: Location[] }) {
@@ -70,21 +82,55 @@ function FitBounds({ locations }: { locations: Location[] }) {
   return null;
 }
 
-export default function TripMap({ selectedDay, onSelectDay, locations, routes, days }: Props) {
+function DirectionArrow({ routePosition, color, active }: { routePosition: RoutePosition; color: string; active: boolean }) {
+  const map = useMap();
+  const [angle, setAngle] = useState(0);
+
+  useEffect(() => {
+    const updateAngle = () => {
+      const from = map.latLngToLayerPoint(routePosition.positions[0]);
+      const to = map.latLngToLayerPoint(routePosition.positions[1]);
+      setAngle(Math.atan2(to.y - from.y, to.x - from.x) * (180 / Math.PI));
+    };
+
+    updateAngle();
+    map.on('zoomend moveend', updateAngle);
+    return () => {
+      map.off('zoomend moveend', updateAngle);
+    };
+  }, [map, routePosition.positions]);
+
+  return (
+    <Marker
+      position={midpoint(routePosition.positions)}
+      icon={arrowIcon(color, angle, active)}
+      interactive={false}
+    />
+  );
+}
+
+export default function TripMap({
+  selectedDays,
+  selectionMode,
+  edgeVisibility,
+  onSelectDay,
+  onSelectionModeChange,
+  onEdgeVisibilityChange,
+  locations,
+  routes,
+  days,
+}: Props) {
+  const selectedSet = useMemo(() => new Set(selectedDays), [selectedDays]);
   const locationMap = useMemo(() => new Map(locations.map((location) => [location.id, location])), [locations]);
   const activeLocations = useMemo(
-    () => itineraryLocationsForDay(locations, selectedDay),
-    [locations, selectedDay],
+    () => locationsForSelectedDays(locations, routes, selectedDays, edgeVisibility),
+    [edgeVisibility, locations, routes, selectedDays],
   );
   const activeIds = useMemo(() => new Set(activeLocations.map((location) => location.id)), [activeLocations]);
-  const activeRouteKeys = useMemo(
-    () => new Set(routesForDay(locations, routes, selectedDay).map((route) => `${route.from}-${route.to}`)),
-    [locations, routes, selectedDay],
-  );
 
   const routePositions = useMemo(() => {
     return days.flatMap((day) => {
-      return routesForDay(locations, routes, day.day)
+      return routesForDay(locations, routes, day.day, edgeVisibility)
         .map((route) => {
           const from = locationMap.get(route.from);
           const to = locationMap.get(route.to);
@@ -98,29 +144,84 @@ export default function TripMap({ selectedDay, onSelectDay, locations, routes, d
         })
         .filter((route): route is RoutePosition => route !== null);
     });
-  }, [days, locationMap, locations, routes]);
+  }, [days, edgeVisibility, locationMap, locations, routes]);
+
+  const markerDay = useMemo(() => {
+    const result = new Map<number, number>();
+    for (const day of days) {
+      for (const location of itineraryLocationsForDayView(locations, routes, day.day, edgeVisibility)) {
+        const current = result.get(location.id) ?? 0;
+        const selectedPriority = selectedSet.has(day.day) ? 10 : 0;
+        const currentPriority = selectedSet.has(current) ? 10 : 0;
+        if (selectedPriority + day.day >= currentPriority + current) {
+          result.set(location.id, day.day);
+        }
+      }
+    }
+    return result;
+  }, [days, edgeVisibility, locations, routes, selectedSet]);
+
+  const visibleMarkerIds = useMemo(() => new Set(markerDay.keys()), [markerDay]);
 
   return (
     <div id="map" className="relative h-[420px] overflow-hidden rounded-3xl md:h-[600px]">
-      <div className="absolute z-[500] m-3 flex max-w-[calc(100%-1.5rem)] gap-2 overflow-x-auto rounded-full bg-white/90 p-2 shadow-lg shadow-slate-900/10 backdrop-blur print:hidden">
-        {days.map((day) => {
-          const active = selectedDay === day.day;
-          const color = dayColor(day.day);
+      <div className="absolute z-[500] m-3 grid max-w-[calc(100%-1.5rem)] gap-2 rounded-2xl bg-white/90 p-2 shadow-lg shadow-slate-900/10 backdrop-blur print:hidden lg:grid-cols-[auto_auto_1fr]">
+        <div className="flex gap-2 overflow-x-auto">
+          {days.map((day) => {
+            const active = selectedSet.has(day.day);
+            const color = dayColor(day.day);
 
-          return (
+            return (
+              <button
+                key={day.day}
+                type="button"
+                onClick={() => onSelectDay(day.day)}
+                className={`shrink-0 rounded-full border px-4 py-2 text-sm font-black transition ${
+                  active ? 'text-white' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+                }`}
+                style={active ? { backgroundColor: color, borderColor: color } : undefined}
+              >
+                Day {day.day}
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={() => onSelectionModeChange('single')}
+            className={`rounded-full border px-3 py-2 text-xs font-black ${
+              selectionMode === 'single' ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-600'
+            }`}
+          >
+            單選
+          </button>
+          <button
+            type="button"
+            onClick={() => onSelectionModeChange('range')}
+            className={`rounded-full border px-3 py-2 text-xs font-black ${
+              selectionMode === 'range' ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-slate-200 bg-white text-slate-600'
+            }`}
+          >
+            連續多選
+          </button>
+        </div>
+        <div className="flex gap-2 overflow-x-auto">
+          {edgeOptions.map((option) => (
             <button
-              key={day.day}
+              key={option.value}
               type="button"
-              onClick={() => onSelectDay(day.day)}
-              className={`shrink-0 rounded-full border px-4 py-2 text-sm font-black transition ${
-                active ? 'text-white' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+              onClick={() => onEdgeVisibilityChange(option.value)}
+              className={`shrink-0 rounded-full border px-3 py-2 text-xs font-black ${
+                edgeVisibility === option.value
+                  ? 'border-blue-600 bg-blue-600 text-white'
+                  : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
               }`}
-              style={active ? { backgroundColor: color, borderColor: color } : undefined}
             >
-              Day {day.day}
+              {option.label}
             </button>
-          );
-        })}
+          ))}
+        </div>
       </div>
 
       <MapContainer center={[33.16, 130.77]} zoom={8} scrollWheelZoom={false} className="h-full w-full">
@@ -130,59 +231,61 @@ export default function TripMap({ selectedDay, onSelectDay, locations, routes, d
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {routePositions.map(({ route, day, positions }) => {
-          const active = activeRouteKeys.has(`${route.from}-${route.to}`);
-          const color = dayColor(active ? selectedDay : day);
+        {routePositions.map((routePosition) => {
+          const active = selectedSet.has(routePosition.day);
+          const color = dayColor(routePosition.day);
 
           return (
             <Polyline
-              key={`${day}-${route.from}-${route.to}`}
-              positions={positions}
+              key={`${routePosition.day}-${routePosition.route.from}-${routePosition.route.to}`}
+              positions={routePosition.positions}
               pathOptions={{ color, weight: active ? 7 : 3, opacity: active ? 0.9 : 0.25 }}
             >
               <Tooltip sticky>
-                {routeIcon(route.mode)} {route.modeLabel} · {route.duration}
+                {routeIcon(routePosition.route.mode)} {routePosition.route.modeLabel} · {routePosition.route.duration}
               </Tooltip>
             </Polyline>
           );
         })}
 
-        {routePositions.map(({ route, day, positions }) => {
-          const active = activeRouteKeys.has(`${route.from}-${route.to}`);
-          const color = dayColor(active ? selectedDay : day);
+        {routePositions.map((routePosition) => {
+          const active = selectedSet.has(routePosition.day);
+          const color = dayColor(routePosition.day);
 
           return (
-            <Marker
-              key={`arrow-${day}-${route.from}-${route.to}`}
-              position={midpoint(positions)}
-              icon={arrowIcon(color, bearing(positions), active)}
-              interactive={false}
+            <DirectionArrow
+              key={`arrow-${routePosition.day}-${routePosition.route.from}-${routePosition.route.to}`}
+              routePosition={routePosition}
+              color={color}
+              active={active}
             />
           );
         })}
 
-        {locations.map((location) => {
-          const active = activeIds.has(location.id);
-          const color = active ? dayColor(selectedDay) : dayColor(location.day);
+        {locations
+          .filter((location) => visibleMarkerIds.has(location.id))
+          .map((location) => {
+            const active = activeIds.has(location.id);
+            const color = dayColor(markerDay.get(location.id) ?? location.day);
 
-          return (
-            <Marker key={location.id} position={[location.lat, location.lng]} icon={markerIcon(location, color, active)}>
-              <Popup>
-                <div className="min-w-[190px]">
-                  <strong>{location.id}. {location.name}</strong>
-                  <br />
-                  {location.date}
-                  <br />
-                  {location.address}
-                  <br />
-                  <a href={googleMapsPlaceUrl(location)} target="_blank" rel="noreferrer">
-                    Google Maps
-                  </a>
-                </div>
-              </Popup>
-            </Marker>
-          );
-        })}
+            return (
+              <Marker key={location.id} position={[location.lat, location.lng]} icon={markerIcon(location, color, active)}>
+                <Popup>
+                  <div className="min-w-[190px]">
+                    <strong>{location.id}. {location.name}</strong>
+                    <br />
+                    {location.date}
+                    <br />
+                    {location.address}
+                    <br />
+                    <a href={googleMapsPlaceUrl(location)} target="_blank" rel="noreferrer">
+                      Google Maps
+                    </a>
+                  </div>
+                </Popup>
+              </Marker>
+            );
+          })}
       </MapContainer>
     </div>
   );
