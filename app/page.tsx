@@ -4,8 +4,7 @@ import days from '@/data/days.json';
 import { Hero } from '@/components/layout/Hero';
 import { SummaryCards } from '@/components/trip/SummaryCards';
 import { TripDashboard } from '@/components/trip/TripDashboard';
-import { DailyPlan } from '@/components/trip/DailyPlan';
-import { TripMapClient } from '@/components/map/TripMapClient';
+import { TripExperience } from '@/components/trip/TripExperience';
 
 export default function Home() {
   return (
@@ -14,18 +13,10 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-4 pb-20">
         <SummaryCards locations={locations} routes={routes} />
         <TripDashboard locations={locations} routes={routes} days={days} />
-        <div className="mt-6 grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
-          <section className="rounded-3xl bg-white p-3 shadow-xl shadow-slate-200/70">
-            <TripMapClient locations={locations} routes={routes} />
-          </section>
-          <section className="rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70">
-            <h2 className="text-xl font-black text-slate-900">每日行程</h2>
-            <p className="mt-1 text-sm text-slate-500">
-              依日期瀏覽景點，點擊卡片可開啟 Google Maps。
-            </p>
-            <DailyPlan locations={locations} routes={routes} days={days} />
-          </section>
-        </div>
+        <TripExperience locations={locations} routes={routes} days={days} />
+        <footer className="mt-8 pb-4 text-center text-xs font-bold text-slate-400">
+          2026 九州五天四夜行程
+        </footer>
       </section>
     </main>
   );
